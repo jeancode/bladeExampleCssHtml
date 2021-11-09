@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blade</title>
+    <style>
+        body{
+            margin:0px;
+        }
+        #contenido{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: black;;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #formCont{
+            width: 400px;
+            height: 400px;
+        
+            border-radius: 50%;
+            display: flex;
+            position: relative;
+            animation:roationInt 3s linear forwards;
+        }
+        .itemForm{
+            width: 200px;
+            height: 200px;
+            border-top:3px solid rgb(246, 12, 12);
+            position:  absolute;
+            border-radius: 50%;;
+            top: var(--y);
+            left: var(--x);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            animation: roationInt var(--i) linear infinite;
+         
+
+        }
+        .itemPuntero{
+            width: 15px;
+            height: 15px;
+            background: var(--co);
+            position: relative;
+            left: 100px;
+            border-radius: 100px;
+            box-shadow: 0px 0px 10px var(--co), 0px 0px 20px var(--co);;;   
+            
+        }
+        @keyframes huero {
+            form{
+                filter:hue-rotate(0deg);
+            }to{
+                filter:hue-rotate(360deg);
+            }
+            
+        }
+
+        @keyframes roationInt {
+            from{
+                transform: rotate(0deg);
+                filter:hue-rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+                filter:hue-rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="contenido">
+        
+
+        <div id="formCont">
+
+            <div class="itemForm" style="--x:100px;--y:0px;--i:1.5s">
+                <div class="itemPuntero" style="--co:rgb(0,0,255)"></div>
+            </div>
+            <div class="itemForm" style="--x:15px;--y:150px;--i:1.9s">
+                <div class="itemPuntero" style="--co:rgb(0,255,0)"></div>
+            </div>
+            <div class="itemForm" style="--x:185px;--y:150px;--i:2.4s">
+                <div class="itemPuntero" style="--co:rgb(255,0,0)"></div>
+            </div>
+
+        </div>
+
+    </div>
+    
+</body>
+</html>
